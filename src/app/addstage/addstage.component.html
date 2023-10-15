@@ -1,0 +1,44 @@
+<app-administration></app-administration>
+<div class="container">
+    <div>
+    <h2>Ajouter un stage</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Code</label>
+
+    <input type="text" [(ngModel)]="newStage.code" name="code" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Type de stage</label>
+    <select class="form-control form-control-lg" id="codet" name="codet" [(ngModel)]="newCodet">
+    <option *ngFor="let typy of typesdestages" [value]=" typy.codet">
+    {{ typy.Stages}}</option>
+    </select>
+    </div>
+  <div class="col-sm-4 col-md-4 col-lg-4" >
+  <label >Organisme d'accueil</label>
+  <input type="text"[(ngModel)]= "newStage.lieu" name="lieu" class="form-control">
+  </div>
+
+  <div class="col-sm-2 col-md-2 col-lg-2">
+  <label >Période</label>
+  <input type="number" [(ngModel)]= "newStage.duree" name="duree" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >Date d'ajout</label>
+  <input type="date" [ngModel]="newStage.dateDebut | date:'yyyy-MM-dd'" (ngModelChange)=" newStage.dateDebut= $event" name="dateDebut" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date d'ajout</label>
+    <input type="date" [ngModel]="newStage.dateFin | date:'yyyy-MM-dd'" (ngModelChange)=" newStage.dateFin= $event" name="dateFin" class="form-control">
+    </div>
+    
+  <div class="mt-2">
+
+  <button type="submit" (click)="addStage()" class="btn btn-success">Ajouter</button>
+
+  </div>
+  </form>
+  </div>
+

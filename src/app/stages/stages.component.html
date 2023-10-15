@@ -1,0 +1,37 @@
+<app-administration></app-administration>
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <h1>Liste des Stages</h1>
+    <table width="100%">
+    <thead>
+    <tr>
+    <th>Code</th>
+    <th>Type de stage</th>
+    <th>Nom du societe </th>
+    <th>Période</th>
+    <th>Date Début</th>
+    <th>Date Fin</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let stage of tab_stage">
+    <tr >
+    <td>{{stage.code}}</td>
+    <td>{{stage.typedestages.Stages}}</td>
+    <td>{{stage.lieu}}</td>
+    <td>{{stage.duree}} jours</td>
+    <td>{{stage.dateDebut | date:'dd/MM/yyyy'}}</td>
+    <td>{{stage.dateFin | date:'dd/MM/yyyy'}}</td>
+
+      <a class="btn btn-warning" [routerLink]="['/updateStage',stage.code]">
+      <img src="../assets/img/edit.png" height="32" width="32">
+    </a><a class="btn btn-danger" (click)="suppStage(stage)">
+      <img src="../assets/img/delete.png" height="32" width="32"></a>
+
+  </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

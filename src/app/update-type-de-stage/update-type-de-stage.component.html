@@ -1,0 +1,24 @@
+<app-administration></app-administration>
+<div class="container">
+    <div>
+    <h2>Modifier un stage</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label>Code</label>
+
+    <input readonly type="text" [(ngModel)]="typeCourant.codet" name="codes" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Type de stage</label>
+    <input  type="text" [(ngModel)]="typeCourant.Stages" name="tages" class="form-control">
+   
+    </div>
+  <div class="mt-2">
+
+  <button type="submit" (click)="modiftypedeStage()" class="btn btn-success"> Modifer </button>
+
+  </div>
+  </form>
+  </div>
+

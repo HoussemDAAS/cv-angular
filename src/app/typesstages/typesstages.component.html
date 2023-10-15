@@ -1,0 +1,30 @@
+<app-administration></app-administration>
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <h1>Type de Stages</h1>
+    <table>
+    <thead>
+    <tr>
+    <th>Code</th>
+    <th>Type de stage</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let type of tab_type">
+    <tr >
+    <td>{{type.codet}}</td>
+    <td>{{type.Stages}}</td>
+
+      <a class="btn btn-warning" [routerLink]="['/updatetypedeStage',type.codet]">
+      <img src="../assets/img/edit.png" height="32" width="32">
+    </a><a class="btn btn-danger" (click)="supptypedeStage(type)">
+      <img src="../assets/img/delete.png" height="32" width="32"></a>
+
+  </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+

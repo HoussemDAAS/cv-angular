@@ -1,0 +1,43 @@
+<app-administration></app-administration>
+<div class="container">
+    <div>
+    <h2>Modifier un stage</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label>Code</label>
+
+    <input readonly type="text" [(ngModel)]="stageCourant.code" name="codes" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Type de stage</label>
+    <select class="form-control form-control-lg" id="codet" name="codet" [(ngModel)]="codetModifie">
+    <option *ngFor="let typy of typesdestages" [value]=" typy.codet">
+    {{ typy.Stages}}</option>
+    </select>
+    </div>
+  <div class="col-sm-4 col-md-4 col-lg-4" >
+  <label >Organisme d'accueil</label>
+  <input type="text"[(ngModel)]= "stageCourant.lieu" name="lieu" class="form-control">
+  </div>
+
+  <div class="col-sm-2 col-md-2 col-lg-2">
+  <label >Période</label>
+  <input type="number" [(ngModel)]= "stageCourant.duree" name="duree" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >Date Debut</label>
+  <input type="date" [ngModel]="stageCourant.dateDebut | date:'yyyy-MM-dd'" (ngModelChange)=" stageCourant.dateDebut= $event" name="dateDebut" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date Fin</label>
+    <input type="date" [ngModel]="stageCourant.dateFin | date:'yyyy-MM-dd'" (ngModelChange)=" stageCourant.dateFin= $event" name="dateFin" class="form-control">
+    </div>
+    
+
+  <button type="submit" (click)="modifStage()" class="btn btn-success"> Modifer </button>
+
+
+  </form>
+  </div>
+
